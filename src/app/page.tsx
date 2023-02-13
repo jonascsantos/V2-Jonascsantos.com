@@ -1,17 +1,22 @@
-import Link from "next/link";
+import { Suspense } from 'react'
+import { Repo } from "./app/components/Repo";
+import { User } from './app/components/User';
 
-export default async function Home() {
-  const response = await fetch('https://api.github.com/users/jonascsantos')  
-  const user = await response.json()
+
+export default function Home() {
   return (
     <div>
       <h1>home</h1>
-      <pre>
-        {JSON.stringify(user, null, 2)}
-      </pre>
-      <Link href="/dashboard">
-        Dashboard
-      </Link>
+      <Suspense fallback={<p>Loading Repos</p>}>
+        {/* @ts-expect-error Async Server Component */}
+        <Repo />
+      </Suspense>
+      
+      <Suspense fallback={<p>Loading Users</p>}>
+        {/* @ts-expect-error Async Server Component */}
+        <User />
+      </Suspense>
+      
     </div>
   )
 }
