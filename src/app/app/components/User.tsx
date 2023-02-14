@@ -1,15 +1,14 @@
-import { cookies, headers } from 'next/headers'
+'use client'
 
-export async function User() {
-  const userCookies = cookies()
-  const userHeaders = headers()
+import { useState } from 'react'
 
-  await new Promise(resolve => setTimeout(resolve, 3000))
+export function User() {
+  let [ count, setCount ] = useState(0)
 
   return (
     <div>
-      <h1>User</h1>
-      {JSON.stringify(userCookies.getAll())}
+      <h1>{count}</h1>
+      <button onClick={() => setCount((state) => state + 1)}>Increment</button>
     </div>
   )
 }
