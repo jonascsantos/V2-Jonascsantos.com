@@ -1,5 +1,4 @@
 export async function Repo() {
-    await new Promise(resolve => setTimeout(resolve, 5000))
     const response = await fetch('http://api.github.com/users/jonascsantos/repos', {
       cache: 'no-store'
     })  
