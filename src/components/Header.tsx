@@ -10,7 +10,7 @@ export function Footer() {
         rel="noreferrer"
       >
         <Github size={12} />
-        Github
+        TEST
       </a>
     </div>
   );
