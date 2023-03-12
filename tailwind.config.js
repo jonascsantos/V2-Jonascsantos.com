@@ -2,6 +2,17 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      primary: "#049CB1",
+      secondary: "#DFF4F6",
+      "gradient-1": "#049CB1",
+      "gradient-2": "#0EC9E3",
+      "gradient-3": "#0DCDC2",
+      "cloudy-white": "#F8F9FF",
+      "cloudy-black": "#324B50",
+    },
     extend: {
       animation: {
         blob: "blob linear infinite 6s",

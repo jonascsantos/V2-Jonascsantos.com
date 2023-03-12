@@ -25,8 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <head />
-      <body className="bg-[#F8F9FF]">
-        <h1 className={"font-bold text-3xl"}>nav</h1>
+      <body className="bg-[#F8F9FF] text-[#324B50]">
+        <h1 className={"font-bold text-3xl"}></h1>
         {children}
       </body>
     </html>
