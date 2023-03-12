@@ -1,15 +1,9 @@
-import Link from "next/link";
-import { Suspense } from "react";
-import { WorkExperience } from "../components/home/WorkExperience";
-
-export const metadata = {
-  title: "Home 1",
-};
+import { Hero } from "@/components/Hero";
 
 export default function Home() {
   return (
-    <div>
-      <WorkExperience />
-    </div>
+    <main>
+      <Hero />
+    </main>
   );
 }
