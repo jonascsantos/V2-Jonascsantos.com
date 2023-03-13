@@ -17,11 +17,11 @@ module.exports = {
       backgroundImage: (theme) => ({
         "gradient-hero": `linear-gradient(to right, ${theme(
           "colors.gradient-1"
-        )}, ${theme("colors.gradient-3")}, ${theme(
-          "colors.gradient-2"
-        )}, ${theme("colors.gradient-1")}, ${theme(
-          "colors.gradient-2"
-        )}, ${theme("colors.gradient-3")})`,
+        )}, ${theme("colors.gradient-2")}, ${theme(
+          "colors.gradient-1"
+        )}, ${theme("colors.gradient-2")}, ${theme(
+          "colors.gradient-1"
+        )}, ${theme("colors.gradient-2")})`,
       }),
       boxShadow: {
         button: "1px 2px 3px 0px rgba(0, 0, 0, 0.11)",
