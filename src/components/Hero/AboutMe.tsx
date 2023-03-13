@@ -10,7 +10,7 @@ export function AboutMe() {
       <span style={firaCode.style} className="font-semibold">
         👋 Hello there! I am
       </span>
-      <h1 className="my-3 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-gradient-1 via-gradient-2 to-gradient-3">
+      <h1 className="my-3 text-4xl font-bold text-transparent bg-clip-text bg-[length:400%_400%] bg-gradient-hero animate-textGradient ">
         Jonas dos Santos
       </h1>
       <p>

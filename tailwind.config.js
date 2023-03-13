@@ -14,9 +14,22 @@ module.exports = {
       "cloudy-black": "#324B50",
     },
     extend: {
+      backgroundImage: (theme) => ({
+        "gradient-hero": `linear-gradient(to right, ${theme(
+          "colors.gradient-1"
+        )}, ${theme("colors.gradient-3")}, ${theme(
+          "colors.gradient-2"
+        )}, ${theme("colors.gradient-1")}, ${theme(
+          "colors.gradient-2"
+        )}, ${theme("colors.gradient-3")})`,
+      }),
+      boxShadow: {
+        button: "1px 2px 3px 0px rgba(0, 0, 0, 0.11)",
+      },
       animation: {
         blob: "blob linear infinite 6s",
         blobImage: "blobImage linear infinite 6s",
+        textGradient: "textGradient 6s ease infinite;",
       },
       keyframes: {
         blob: {
@@ -35,6 +48,17 @@ module.exports = {
           },
           "75%": {
             borderRadius: "59% 62% 44% 62% / 62% 48% 51% 40%",
+          },
+        },
+        textGradient: {
+          "0%": {
+            backgroundPosition: "0% 50%",
+          },
+          "50%": {
+            backgroundPosition: "100% 50%",
+          },
+          "100%": {
+            backgroundPosition: "0% 50%",
           },
         },
       },
