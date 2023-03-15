@@ -12,6 +12,7 @@ module.exports = {
       "gradient-3": "#0DCDC2",
       "cloudy-white": "#F8F9FF",
       "cloudy-black": "#324B50",
+      "sky-blue": "#99e0ff",
     },
     extend: {
       backgroundImage: (theme) => ({
@@ -22,6 +23,13 @@ module.exports = {
         )}, ${theme("colors.gradient-2")}, ${theme(
           "colors.gradient-1"
         )}, ${theme("colors.gradient-2")})`,
+        "gradient-work": `radial-gradient(at 96% 98%, hsla(183, 53%, 50%, 1) 0px, transparent 50%),
+        radial-gradient(at 95% 74%, hsla(33, 78%, 74%, 0.81) 0px, transparent 50%),
+        radial-gradient(at 2% 96%, hsla(187, 96%, 60%, 1) 0px, transparent 50%),
+        radial-gradient(at 87% 1%, hsla(176, 79%, 68%, 1) 0px, transparent 50%),
+        radial-gradient(at 64% 55%, hsla(193, 70%, 56%, 1) 0px, transparent 50%),
+        radial-gradient(at 17% 70%, hsla(180, 88%, 36%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 8%, hsla(187, 71%, 38%, 1) 0px, transparent 50%);`,
       }),
       boxShadow: {
         button: "1px 2px 3px 0px rgba(0, 0, 0, 0.11)",

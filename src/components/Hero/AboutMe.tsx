@@ -6,7 +6,7 @@ const firaCode = Fira_Code({ subsets: ["latin"] });
 
 export function AboutMe() {
   return (
-    <div className="px-5 text-center">
+    <div className="px-5 pb-10 text-center">
       <span style={firaCode.style} className="font-semibold">
         👋 Hello there! I am
       </span>
