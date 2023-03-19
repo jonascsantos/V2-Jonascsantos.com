@@ -13,6 +13,18 @@ module.exports = {
       "cloudy-white": "#F8F9FF",
       "cloudy-black": "#324B50",
       "sky-blue": "#99e0ff",
+      project1Bg: "#E4F2FF",
+      project1Primary: "#1D4ED8",
+      project1Secondary: "#148BFF",
+      project1Tertiary: "#3E5DFF",
+      project2Bg: "#F2FFF5",
+      project2Primary: "#46B24A",
+      project2Secondary: "#95AF4C",
+      project2Tertiary: "#DF5E4A",
+      project3Bg: "#EFFFFD",
+      project3Primary: "#00C7AE",
+      project3Secondary: "#02E9CB",
+      project3Tertiary: "#67F3B7",
     },
     extend: {
       backgroundImage: (theme) => ({
@@ -23,6 +35,31 @@ module.exports = {
         )}, ${theme("colors.gradient-2")}, ${theme(
           "colors.gradient-1"
         )}, ${theme("colors.gradient-2")})`,
+
+        "gradient-project-1": `linear-gradient(to bottom right, ${theme(
+          "colors.project1Primary"
+        )}, ${theme("colors.project1Secondary")}, ${theme(
+          "colors.project1Tertiary"
+        )}, ${theme("colors.project1Secondary")}, ${theme(
+          "colors.project1Primary"
+        )}, ${theme("colors.project1Secondary")})`,
+
+        "gradient-project-2": `linear-gradient(to bottom right, ${theme(
+          "colors.project2Primary"
+        )}, ${theme("colors.project2Secondary")}, ${theme(
+          "colors.project2Tertiary"
+        )}, ${theme("colors.project2Secondary")}, ${theme(
+          "colors.project2Primary"
+        )}, ${theme("colors.project2Secondary")})`,
+
+        "gradient-project-3": `linear-gradient(to right, ${theme(
+          "colors.project3Primary"
+        )}, ${theme("colors.project3Secondary")}, ${theme(
+          "colors.project3Tertiary"
+        )}, ${theme("colors.project3Secondary")}, ${theme(
+          "colors.project3Primary"
+        )}, ${theme("colors.project3Secondary")})`,
+
         "gradient-work": `radial-gradient(at 96% 98%, hsla(183, 53%, 50%, 1) 0px, transparent 50%),
         radial-gradient(at 95% 74%, hsla(33, 78%, 74%, 0.81) 0px, transparent 50%),
         radial-gradient(at 2% 96%, hsla(187, 96%, 60%, 1) 0px, transparent 50%),
