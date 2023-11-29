@@ -1,12 +1,9 @@
 import { Title } from "./Title";
-import { Project } from "./Project";
+import { Project, ProjectProps } from "./Project";
 
-import project1Mobile from "@/assets/projects/project1-mobile.png";
-import project2Mobile from "@/assets/projects/project2-mobile.png";
-import project3Mobile from "@/assets/projects/project3-mobile.png";
-import project1Desktop from "@/assets/projects/project1-desktop.png";
-import project2Desktop from "@/assets/projects/project2-desktop.png";
-import project3Desktop from "@/assets/projects/project3-desktop.png";
+import project1 from "@/assets/projects/project1.png";
+import project2 from "@/assets/projects/project2.png";
+import project3 from "@/assets/projects/project3.png";
 
 export function Projects() {
   const projectsObj = [
@@ -28,8 +25,7 @@ export function Projects() {
         "NativeBase",
         "Expo",
       ],
-      iconMobile: project1Mobile.src,
-      iconDesktop: project1Desktop.src,
+      image: project1.src,
       bgColor: "#E4F2FF",
       primaryProjectColor: "#1D4ED8",
       secondaryProjectColor: "#148BFF",
@@ -53,8 +49,7 @@ export function Projects() {
         "NodeMCU",
         "GitHub Actions",
       ],
-      iconMobile: project2Mobile.src,
-      iconDesktop: project2Desktop.src,
+      image: project2.src,
       bgColor: "#F2FFF5",
       primaryProjectColor: "#46B24A",
       secondaryProjectColor: "#95AF4C",
@@ -76,23 +71,24 @@ export function Projects() {
         "Express.JS",
         "Node.JS",
       ],
-      iconMobile: project3Mobile.src,
-      iconDesktop: project3Desktop.src,
+      image: project3.src,
       bgColor: "#EFFFFD",
       primaryProjectColor: "#00C7AE",
       secondaryProjectColor: "#02E9CB",
       tertiaryProjectColor: "#67F3B7",
       gradient: 3,
     },
-  ];
+  ] as ProjectProps[];
 
   return (
     <section data-section="Work">
-      <div className="w-full pt-5 pb-10 bg-cloudy-white">
+      <div className="flex flex-col gap-5 w-full pt-10 px-3 pb-24  bg-cloudy-white">
         <Title />
-        {projectsObj.map((item, index) => (
-          <Project key={index} project={item} />
-        ))}
+        <div className="flex flex-col gap-16" >
+          {projectsObj.map((item, index) => (
+            <Project key={item.projectName + "-" + index} project={item} />
+          ))}
+        </div>
       </div>
     </section>
   );
