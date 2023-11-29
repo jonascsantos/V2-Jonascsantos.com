@@ -5,6 +5,7 @@ import TabsMui from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import SwipeableViews from "react-swipeable-views";
 
+import fcLogo from "@/assets/logos/FC.jpg";
 import sapLogo from "@/assets/logos/SAP.svg";
 import butopeaLogo from "@/assets/logos/BUTOPEA.png";
 import inssLogo from "@/assets/logos/INSS.svg";
@@ -13,10 +14,30 @@ import sesauLogo from "@/assets/logos/SESAU.png";
 export function Tabs() {
   const workExperiences = [
     {
+      companyName: "FreshConstruct",
+      jobTitle: "Full-Stack Developer",
+      startDate: "Mar 2023",
+      endDate: "Present",
+      icon: fcLogo.src,
+      bulletPoints: [
+        "Orchestrated a UIrefactoring project aligned with a Figma design, introducing isolated React components via Storybook and overseeing successful project execution.",
+        "Developed innovative landing pages and UI features using React, React Native, Next.JS, Angular, Expo, Webflow, TypeScript, and JavaScript.",
+        "Mentored apprentices to nurture their professional growth.",
+        "Deployed projects on Azure, and successfully submitted applications to the App Store and Google Play Store.",
+        "Managed REST API .NET endpoints and MSSQL databases.",
+        "Ensured robust quality through Cypress testing for comprehensive QA.",
+        "Designed user-friendly interfaces and prototypes using Figma.",
+        "Conducted A/B testing and analytics with VWO, Google Analytics, and Google Tag Manager.",
+        "Efficiently managed content with Umbraco and Episerver CMS.",
+        "Successfully delivered HTML Email templates and PDFs (.NET).",
+      ],
+      technologies: ["React", "React Native", "Next.JS", "Angular", "Webflow", "TypeScript", "JavaScript", "Figma"],
+    },
+    {
       companyName: "SAP",
       jobTitle: "DevOps Engineer",
       startDate: "Feb 2022",
-      endDate: "Present",
+      endDate: "Mar 2023",
       icon: sapLogo.src,
       bulletPoints: [
         "Jenkins/automation scripting using Bash and Ruby.",
@@ -111,13 +132,13 @@ export function Tabs() {
         aria-labelledby={`full-width-tab-${index}`}
         {...other}
       >
-        {value === index && <div className="p-3">{children}</div>}
+        {value === index && <div className="py-3">{children}</div>}
       </div>
     );
   }
 
   return (
-    <div className="w-98 bg-cloudy-white rounded-lg mx-2">
+    <div className="w-98 px-5 bg-cloudy-white rounded-lg ">
       <TabsMui
         value={value}
         onChange={handleChange}
@@ -125,15 +146,17 @@ export function Tabs() {
         sx={{
           "& .MuiTabs-indicator": { backgroundColor: "#049CB1" },
           "& .MuiTabs-scroller": { borderBottom: 1, borderColor: "divider" },
+          "& .MuiTabScrollButton-root.Mui-disabled": { display: "none" },
         }}
         aria-label="Work Experience tabs"
-        className="px-3"
+        allowScrollButtonsMobile
       >
         {workExperiences.map((item, index) => (
           <Tab
             key={index}
             {...a11yProps(index)}
-            icon={<img src={item.icon} />}
+            icon={<img src={item.icon} style={{mixBlendMode: "multiply", maxHeight: "70px"}} />}
+            sx={{width: "140px", maxHeight: "80px"}}
           />
         ))}
       </TabsMui>
@@ -143,7 +166,7 @@ export function Tabs() {
             <div>
               <h2 className="font-bold text-lg">
                 {item.jobTitle}{" "}
-                <span className="text-primary">@ {item.companyName}</span>
+                <span className="text-primary whitespace-nowrap">@ {item.companyName}</span>
               </h2>
               <h3 className="text-sm">
                 {item.startDate} - {item.endDate}
