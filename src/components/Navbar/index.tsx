@@ -8,42 +8,126 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
 import { Logo } from './Logo';
+import Menu from './Menu';
 
 const theme = createTheme();
 
-const StyledContainer = styled(AppBar, {
-  shouldForwardProp: (prop) => prop !== 'scrollDirection'
- })<{scrollDirection: string}>
- (({ scrollDirection, theme }) => ({
+const StyledContainer = styled(AppBar)<{scrollDirection: string, bgColor: string}>
+ (({ scrollDirection, bgColor, theme }) => ({
   position: 'fixed',
   top: 0,
-  padding: '0px 25px',
-  backgroundColor: 'transparent',
+  zIndex: 10,
+  padding: '8px 25px', 
   transition: "all 0.3s ease-in-out",
-  zIndex: 11,
   filter: 'none !important',
   width: '100%',
-  height: scrollDirection == 'none' ? "70px" : "5px",
-  transform: `translateY(${scrollDirection === 'down' ? `-70px` : '0px'})`,
+  backgroundColor: "transparent",
+  borderRadius: 16,                             
+  boxShadow: scrollDirection === 'down' ? `0 4px 30px rgba(0, 0, 0, 0.1)` : `none`,
+  backdropFilter: 'blur(2.9px)',
+  WebkitBackdropFilter: 'blur(2.9px)',
 }));
 
 const StyledNav = styled(Toolbar)(({ theme }) => ({
   position: 'relative',
-  width: '100%',
+  width: '100%',   
+  zIndex: 11,
   color: "#070707",
   textDecoration: 'none',
   fontWeight: 400,
-  zIndex: 12,
   display: "flex",
   justifyContent: "space-between",
-  alignSelf: "stretch"
+  alignSelf: "stretch",
+  padding: 0
 }));
+
+const StyledHamburger = styled("a")(({ theme }) => ({
+  justifyContent: 'center',
+  alignItems: 'center',
+  overflow: 'visible',
+  margin: '0 -12px 0 0',
+  padding: 15,
+  zIndex: 12,
+  cursor: 'pointer',
+  transitionTimingFunction: 'linear',
+  transitionDuration: '0.15s',
+  transitionProperty: 'opacity, filter',
+  textTransform: 'none',
+  color: 'inherit',
+  border: 0,
+  backgroundColor: 'transparent',
+  display: 'none',
+
+  "@media (max-width: 768px)": {
+    display: "flex",
+  },
+}));
+
+const StyledHamburgerBox = styled("div")(({ theme }) => ({
+  position: 'relative',
+  display: 'inline-block',
+  width: 30,
+  height: 24,
+}));
+
+const StyledHamburgerInner = styled("div", {
+  shouldForwardProp: (prop) => prop !== 'menuOpen'
+ })<{menuOpen: boolean, bgColor: string}>
+ (({ menuOpen, bgColor, theme }) => ({
+  backgroundColor: `${menuOpen ? "#ffffff" : bgColor}`,
+  position: 'absolute',
+  width: 30,
+  height: 2,
+  borderRadius: 3,
+  top: '50%',
+  left: 0,
+  right: 0,
+  transitionDuration: '0.22s',
+  transitionProperty: 'transform',
+  transitionDelay: `${menuOpen ? '0.12s' : '0s'}`,
+  transform: `rotate(${menuOpen ? `225deg` : `0deg`})`,
+  transitionTimingFunction: `cubic-bezier(,${menuOpen ? '0.215, 0.61, 0.355, 1' : '0.55, 0.055, 0.675, 0.19'})`,
+  "&:before, &:after" : {
+    content: "''",
+    display: 'block',
+    backgroundColor: `${menuOpen ? "#ffffff" : bgColor}`,
+    position: 'absolute',
+    left: 'auto',
+    right: 0,
+    width: 30,
+    height: 2,
+    transitionTimingFunction: 'ease',
+    transitionDuration: '0.15s',
+    transitionProperty: 'transform',
+    borderRadius: 4,
+  },
+  "&:before": {
+    width: menuOpen ? `100%` : `120%`,
+    top: menuOpen ? `0` : `-10px`,
+    opacity: menuOpen ? 0 : 1,
+    transition: menuOpen ? `top 0.1s ease-out, opacity 0.1s ease-out 0.12s` : `top 0.1s ease-in 0.25s, opacity 0.1s ease-in`,
+  },
+  "&:after": {
+    width: menuOpen ? `100%` : `80%`,
+    bottom: menuOpen ? `0` : `-10px`,
+    transform: `rotate(${menuOpen ? '-90deg' : '0'})`,
+    transition: menuOpen ? `bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s` : `bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19)`,
+  }
+}));
+
+
+
+const HamburgerContainer = styled("div")(({ theme }) => ({
+  zIndex: 12
+}));
+
 
 const StyledResumeButton = styled("a")(({ theme }) => ({
 
 }));
 
 const StyledLogo = styled(Box)(({ theme }) => ({
+  zIndex: 7,
   '& a': {
     display: 'block',
     color: "#070707",
@@ -68,12 +152,13 @@ const NavBar = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [scrollDirection, setScrollDirection] = useState('none');
   const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsMounted(true);
       window.addEventListener('scroll', throttle(handleScroll));
-    }, 100);
+    }, 200);
   
     return () => {
       clearTimeout(timeoutId);
@@ -81,87 +166,74 @@ const NavBar = () => {
     };
   }, []);
 
-  const DELTA = 5;
+  const DELTA = 10;
   const navHeight = 100;
   const timeout = 2000;
   const fadeClass = 'fade';
   const fadeDownClass = 'fadedown';
   const navLinks = [
-    // {
-    //     name: 'About',
-    //     url: '/#about',
-    // },
-    // {
-    //     name: 'Projects',
-    //     url: '/#projects',
-    // },
-    // {
-    //     name: 'Experience',
-    //     url: '/#jobs',
-    // },
-    // {
-    //     name: 'Blog',
-    //     url: '/#blog',
-    // },
-    // {
-    //     name: 'Contact',
-    //     url: 'https://jonascsantos.com',
-    // },
-
+    {
+        name: 'About',
+        url: '/#about',
+    },
+    {
+      name: 'Experience',
+      url: '/#jobs',
+    },
+    {
+        name: 'Projects',
+        url: '/#projects',
+    },
+    {
+        name: 'Contact',
+        url: 'mailto:contact@jonascsantos.com',
+    },
   ];
 
   const handleScroll = () => {
     const fromTop = window.scrollY;
 
-    if (!isMounted || Math.abs(lastScrollTop - fromTop) <= DELTA) {
-      return;
-    }
     if (fromTop < DELTA) {
       setScrollDirection('none');
-    } else if (fromTop > lastScrollTop && fromTop > navHeight) {
+    } else if (fromTop >= lastScrollTop && fromTop > navHeight) {
       if (scrollDirection !== 'down') {
+        console.log("down set")
         setScrollDirection('down');
       }
     } else if (fromTop + window.innerHeight < document.body.scrollHeight) {
       if (scrollDirection !== 'up') {
+        console.log("up set")
         setScrollDirection('up');
       }
-    }
+    } 
     setLastScrollTop(fromTop);
   };
 
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const mainColor = scrollDirection === 'down' ? "#0EC9E3": "transparent"; 
   return (
     <ThemeProvider theme={theme}>
-        <StyledContainer scrollDirection={scrollDirection}>
+        <StyledContainer className={scrollDirection === 'down' ? "bg-gradient-hero" : ""} scrollDirection={scrollDirection} bgColor={mainColor}>
         <StyledNav>
           <TransitionGroup component={null}>
             {isMounted && (
               <CSSTransition classNames={fadeClass} timeout={timeout}>
                 <StyledLogo >
                   <Link href="/" aria-label="home">
-                    <Logo />
+                    <Logo color={scrollDirection === 'down' ? "white" : "#0EC9E3" } />
                   </Link>
                 </StyledLogo>
               </CSSTransition>
             )}
           </TransitionGroup>
-            <div>
-                  <TransitionGroup component={null}>
-                    {isMounted && (
-                        <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-                          <div style={{ transitionDelay: `100ms` }}>
-                              <StyledResumeButton
-                                  href="/resume.pdf"
-                                  target="_blank"
-                                  rel="nofollow noopener noreferrer"
-                                  >
-                                  Resume
-                              </StyledResumeButton>
-                          </div>
-                        </CSSTransition>
-                    )}
-                </TransitionGroup> 
-            </div>
+           
+            <HamburgerContainer>
+              <StyledHamburger onClick={toggleMenu}>
+                  <StyledHamburgerBox>
+                      <StyledHamburgerInner menuOpen={menuOpen} bgColor={scrollDirection === 'down' ? "white" : "#0EC9E3"}/>
+                  </StyledHamburgerBox>
+              </StyledHamburger>
+            </HamburgerContainer>
 
           {/* <TransitionGroup component={null}>
             {isMounted && (
@@ -173,7 +245,9 @@ const NavBar = () => {
 
           {/* Other components */}
         </StyledNav>
+        <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} />
       </StyledContainer>
+
     </ThemeProvider>
   );
 };
