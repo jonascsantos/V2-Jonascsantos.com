@@ -9,9 +9,9 @@ export function Social() {
       <div className="w-10 h-10 flex items-center justify-center rounded-lg shadow-button">
         <Linkedin size={30} />
       </div>
-      <div className="w-10 h-10 flex items-center justify-center rounded-lg shadow-button">
+      {/* <div className="w-10 h-10 flex items-center justify-center rounded-lg shadow-button">
         <Instagram size={30} />
-      </div>
+      </div> */}
       <div className="w-10 h-10 flex items-center justify-center rounded-lg shadow-button">
         <Mail size={30} />
       </div>
