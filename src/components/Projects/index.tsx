@@ -58,7 +58,7 @@ export function Projects() {
     },
     {
       projectNumber: "03.",
-      projectName: "Universal ClipSync (In progress)",
+      projectName: "Universal ClipSync (UI/UX)",
       githubLink: "https://github.com/jonascsantos/UniversalClipSyncAPP",
       websiteLink: "",
       description:
@@ -66,10 +66,6 @@ export function Projects() {
       technologies: [
         "Adobe XD",
         "React Native",
-        "ASP.NET",
-        "MongoDB",
-        "Express.JS",
-        "Node.JS",
       ],
       image: project3.src,
       bgColor: "#EFFFFD",
