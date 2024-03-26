@@ -20,8 +20,9 @@ export function Tabs() {
       endDate: "Present",
       icon: fcLogo.src,
       bulletPoints: [
-        "Orchestrated a UIrefactoring project aligned with a Figma design, introducing isolated React components via Storybook and overseeing successful project execution.",
-        "Developed innovative landing pages and UI features using React, React Native, Next.JS, Angular, Expo, Webflow, TypeScript, and JavaScript.",
+        "Orchestrated UI refactoring of audience coordination software, utilized by thousands accross Australia. This software efficiently handles bookings for television shows. Visit: https://v2.thatstheticket.com.au/audience",
+        "Introduced isolated React components implementation with Storybook",
+        "Developed innovative landing pages and UI features using React, React Native, Next.JS, MUI, Expo, Webflow, TypeScript, and JavaScript.",
         "Mentored apprentices to nurture their professional growth.",
         "Deployed projects on Azure, and successfully submitted applications to the App Store and Google Play Store.",
         "Managed REST API .NET endpoints and MSSQL databases.",
@@ -31,7 +32,7 @@ export function Tabs() {
         "Efficiently managed content with Umbraco and Episerver CMS.",
         "Successfully delivered HTML Email templates and PDFs (.NET).",
       ],
-      technologies: ["React", "React Native", "Next.JS", "Angular", "Webflow", "TypeScript", "JavaScript", "Figma"],
+      technologies: ["React", "React Native", "Next.JS", "MUI", "Webflow", "TypeScript", "JavaScript", "Figma"],
     },
     {
       companyName: "SAP",
