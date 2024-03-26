@@ -30,6 +30,7 @@ const gradients: Gradients = {
   1: "bg-gradient-project-1",
   2: "bg-gradient-project-2",
   3: "bg-gradient-project-3",
+  4: "bg-gradient-project-4",
 };
 
 export function Project(props: { project: ProjectProps }) {
@@ -97,15 +98,17 @@ export function Project(props: { project: ProjectProps }) {
             </a>
           )}
         </div>
-        <div>
-          <a
-            rel="noopener"
-            target="_blank"
-            href={project.githubLink}
-          >
-            <Image width="32" height="32" src="images/logo-github.svg" alt="github icon" />
-          </a>
-        </div>
+        {project.githubLink && 
+          <div>
+            <a
+              rel="noopener"
+              target="_blank"
+              href={project.githubLink}
+            >
+              <Image width="32" height="32" src="images/logo-github.svg" alt="github icon" />
+            </a>
+          </div>
+        }
       </div>
     </div>
   );
