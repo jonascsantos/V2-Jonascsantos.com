@@ -46,7 +46,7 @@ export function Project(props: { project: ProjectProps }) {
         backgroundColor: project.bgColor,
       }}
       className={
-        "w-98 relative rounded-3xl shadow-lg px-5 pt-5 pb-12 flex flex-col gap-3 overflow-hidden"
+        "w-98 relative rounded-3xl shadow-inner transition-all drop-shadow-md hover:drop-shadow-lg px-5 pt-5 pb-12 flex flex-col gap-3 overflow-hidden"
       }
     >
       <h1

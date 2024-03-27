@@ -71,13 +71,13 @@ module.exports = {
           "colors.project4Primary"
         )}, ${theme("colors.project4Secondary")})`,
 
-        "gradient-work": `radial-gradient(at 96% 98%, hsla(183, 53%, 50%, 1) 0px, transparent 50%),
+        "gradient-work": `radial-gradient(at 96% 98%, hsla(193, 70%, 56%, 1) 0px, transparent 50%),
         radial-gradient(at 95% 74%, hsla(33, 78%, 74%, 0.81) 0px, transparent 50%),
-        radial-gradient(at 2% 96%, hsla(187, 96%, 60%, 1) 0px, transparent 50%),
-        radial-gradient(at 87% 1%, hsla(176,42%, 57%, 1) 0px, transparent 50%),
-        radial-gradient(at 64% 55%, hsla(193, 70%, 56%, 1) 0px, transparent 50%),
-        radial-gradient(at 17% 70%, hsla(180, 88%, 36%, 1) 0px, transparent 50%),
-        radial-gradient(at 0% 8%, hsla(187, 71%, 38%, 1) 0px, transparent 50%);`,
+        radial-gradient(at 2% 96%, hsla(187, 96%, 50%, 1) 0px, transparent 50%),
+        radial-gradient(at 87% 1%, hsla(193, 70%, 50%, 1) 0px, transparent 50%),
+        radial-gradient(at 64% 55%, hsla(193, 70%, 51%, 1) 0px, transparent 50%),
+        radial-gradient(at 17% 70%, hsla(193, 70%, 52%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 8%, hsla(193, 70%, 40%, 1) 0px, transparent 50%);`,
       }),
       boxShadow: {
         button: "1px 2px 3px 0px rgba(0, 0, 0, 0.11)",
