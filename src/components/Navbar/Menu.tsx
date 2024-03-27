@@ -27,8 +27,8 @@ const Sidebar = styled("aside")(({ theme }) => ({
   alignContent: "center",
   justifyContent: "center",
   flexDirection: "column",
-  backgroundColor: "gray",
-  padding: 50,
+  backgroundColor: "#0BA1B6",
+  padding: 30,
   width: "50vw",
   height: "100%",
   position: "relative",
@@ -46,7 +46,8 @@ const NavLinks = styled("nav")(({ theme }) => ({
   width: "100%",
   flexDirection: "column",
   textAlign: "center",
-  color: "#070707",
+  color: "#FFFFFF",
+  fontWeight: "500"
 }));
 
 const NavList = styled("ol")(({ theme }) => ({
@@ -57,7 +58,7 @@ const NavList = styled("ol")(({ theme }) => ({
 }));
 
 const NavListItem = styled("li")(({ theme }) => ({
-  margin: "0 auto 20px",
+  margin: "0 auto 26px",
   position: "relative",
   fontSize: 16,
 }));
@@ -68,7 +69,6 @@ const NavLink = styled(Link)(({ theme }) => ({
 }));
 
 const ResumeLink = styled(Link)(({ theme }) => ({
-  marginLeft: 10,
 }));
 
 const navLinks = [
@@ -116,7 +116,7 @@ export const Menu = ({
         aria-hidden={!menuOpen}
         tabIndex={menuOpen ? 1 : -1}
       >
-        <Sidebar>
+        <Sidebar className="bg-gradient-work">
           <NavLinks>
             <NavList>
               {navLinks &&

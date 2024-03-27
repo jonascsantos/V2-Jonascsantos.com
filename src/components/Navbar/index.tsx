@@ -22,10 +22,10 @@ const StyledContainer = styled(AppBar)<{scrollDirection: string, bgColor: string
   filter: 'none !important',
   width: '100%',
   backgroundColor: "transparent",
-  borderRadius: 16,                             
+  borderRadius: "0 0 0 16",                             
   boxShadow: scrollDirection === 'down' ? `0 4px 30px rgba(0, 0, 0, 0.1)` : `none`,
-  backdropFilter: 'blur(2.9px)',
-  WebkitBackdropFilter: 'blur(2.9px)',
+  backdropFilter: 'blur(7px)',
+  WebkitBackdropFilter: 'blur(7px)',
 }));
 
 const StyledNav = styled(Toolbar)(({ theme }) => ({
@@ -213,14 +213,14 @@ const NavBar = () => {
   const mainColor = scrollDirection === 'down' ? "#0EC9E3": "transparent"; 
   return (
     <ThemeProvider theme={theme}>
-        <StyledContainer className={scrollDirection === 'down' ? "bg-gradient-hero" : ""} scrollDirection={scrollDirection} bgColor={mainColor}>
+        <StyledContainer className={scrollDirection === 'down' ? "bg-[#f8f9ffdd]" : ""} scrollDirection={scrollDirection} bgColor={mainColor}>
         <StyledNav>
           <TransitionGroup component={null}>
             {isMounted && (
               <CSSTransition classNames={fadeClass} timeout={timeout}>
                 <StyledLogo >
                   <Link href="/" aria-label="home">
-                    <Logo color={scrollDirection === 'down' ? "white" : "#0EC9E3" } />
+                    <Logo color={scrollDirection === 'down' ? "#0EC9E3" : "#0EC9E3" } />
                   </Link>
                 </StyledLogo>
               </CSSTransition>
@@ -230,7 +230,7 @@ const NavBar = () => {
             <HamburgerContainer>
               <StyledHamburger onClick={toggleMenu}>
                   <StyledHamburgerBox>
-                      <StyledHamburgerInner menuOpen={menuOpen} bgColor={scrollDirection === 'down' ? "white" : "#0EC9E3"}/>
+                      <StyledHamburgerInner menuOpen={menuOpen} bgColor={scrollDirection === 'down' ? "#0EC9E3" : "#0EC9E3"}/>
                   </StyledHamburgerBox>
               </StyledHamburger>
             </HamburgerContainer>
