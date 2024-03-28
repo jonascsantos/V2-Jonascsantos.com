@@ -126,7 +126,7 @@ const StyledResumeButton = styled("a")(({ theme }) => ({
 
 }));
 
-const StyledLogo = styled(Box)(({ theme }) => ({
+export const StyledLogo = styled(Box)(({ theme }) => ({
   zIndex: 7,
   '& a': {
     display: 'block',

@@ -31,6 +31,7 @@
     "react-ga4": "^2.0.0",
     "react-transition-group": "^4.4.5",
     "react-typical": "^0.1.3",
+    "react-wavify": "^1.10.0",
     "typescript": "4.9.5"
   },
   "devDependencies": {

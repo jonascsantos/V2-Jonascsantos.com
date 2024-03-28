@@ -104,7 +104,7 @@ export function Projects() {
 
   return (
     <section data-section="Work">
-      <div className="flex flex-col gap-5 w-full pt-10 px-3 pb-24  bg-cloudy-white">
+      <div className="flex flex-col gap-5 w-full pt-10 px-3 pb-12  bg-cloudy-white">
         <Title />
         <div className="flex flex-col gap-16" >
           {projectsObj.map((item, index) => (
