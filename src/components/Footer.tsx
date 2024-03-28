@@ -21,8 +21,8 @@ export function Footer() {
       <div className="absolute left-0 right-0 top-32">
         <div className="flex gap-4 mx-5">
           <StyledLogo>
-            <Link href="/" aria-label="home">
-              <Logo color="#DFF4F6" />
+            <Link href="/" aria-label="footer-home">
+              <Logo color="#DFF4F6" key="001"/>
             </Link>
           </StyledLogo>
           <div className="text-center flex flex-col	">

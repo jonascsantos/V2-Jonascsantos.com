@@ -197,7 +197,6 @@ const NavBar = () => {
       setScrollDirection('none');
     } else if (fromTop >= lastScrollTop && fromTop > navHeight) {
       if (scrollDirection !== 'down') {
-        console.log("down set")
         setScrollDirection('down');
       }
     } else if (fromTop + window.innerHeight < document.body.scrollHeight) {
