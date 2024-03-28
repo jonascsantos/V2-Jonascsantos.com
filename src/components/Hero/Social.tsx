@@ -1,8 +1,12 @@
 import { Github, Linkedin, Instagram, Mail } from "lucide-react";
 
-export function Social() {
+interface SocialProps {
+  leftAligned?: boolean
+}
+
+export const Social = ({ leftAligned }: SocialProps) => {
   return (
-    <div className="my-5 flex w-full justify-around text-primary">
+    <div className={`my-5 flex w-full ${leftAligned ? `gap-10` : `justify-around`} text-primary`}>
       <div className="w-10 h-10 flex items-center justify-center rounded-lg shadow-button">
         <Github size={30} />
       </div>
