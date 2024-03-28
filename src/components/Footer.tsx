@@ -33,7 +33,7 @@ export function Footer() {
       </div>
       <WaveContainer>
        <Wave
-          fill="#00b6ad"
+          fill="#049CB1"
           paused={false}
           opacity="0.30"
           options={{
@@ -46,8 +46,8 @@ export function Footer() {
       </WaveContainer>
       <WaveContainer>
         <Wave
-          fill="#00959e"
-          opacity="0.80"
+          fill="#049CB1"
+          opacity="1"
           paused={false}
           options={{
             height: 75,
@@ -59,7 +59,7 @@ export function Footer() {
       </WaveContainer>
       <WaveContainer>
         <Wave
-          fill="#01838a"
+          fill="#049CB1"
           paused={false}
           opacity="0.5"
           options={{
