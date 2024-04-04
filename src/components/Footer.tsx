@@ -1,6 +1,5 @@
 import Wave from 'react-wavify';
-import { styled } from "@mui/material";
-import { StyledLogo } from './Navbar';
+import { Box, styled } from "@mui/material";
 import Link from 'next/link';
 import { Logo } from './Navbar/Logo';
 
@@ -16,14 +15,34 @@ export function Footer() {
     zIndex: '-1',
   }));
 
+  const StyledLogo = styled(Box)(({ theme }) => ({
+    zIndex: 7,
+    '&': {
+      display: 'block',
+      color: "#070707",
+      width: "3rem",
+      height: "3rem",
+      opacity: 1,
+      '&:hover, &:focus': {
+        opacity: 0.5,
+      },
+      '& svg': {
+        fill: 'none',
+        transition: theme.transitions.create('fill', {
+          easing: theme.transitions.easing.easeInOut,
+          duration: theme.transitions.duration.short,
+        }),
+        userSelect: 'none',
+      },
+    },
+  }));
+  
   return (
     <section data-section="Footer" className='relative'>
       <div className="absolute left-0 right-0 top-32">
         <div className="flex gap-4 mx-5">
           <StyledLogo>
-            <Link href="/" aria-label="footer-home">
-              <Logo color="#DFF4F6" key="001"/>
-            </Link>
+            <Logo color="#DFF4F6" key="logo-02"/>
           </StyledLogo>
           <div className="text-center flex flex-col	">
             <span className="flex font-bold text-secondary">Jonas Dos Santos</span>

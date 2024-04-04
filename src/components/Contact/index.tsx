@@ -12,7 +12,7 @@ export function Contact() {
             I am always open for a chat. Feel free to contact me via email or other social platforms.
           </p>
         </div>
-        <Social leftAligned />
+        <Social />
       </div>
     </section>
   );
