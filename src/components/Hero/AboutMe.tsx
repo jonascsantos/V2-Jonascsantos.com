@@ -6,11 +6,11 @@ const firaCode = Fira_Code({ subsets: ["latin"] });
 
 export function AboutMe() {
   return (
-    <div className="px-5 pb-10 text-center">
-      <span style={firaCode.style} className="font-semibold">
+    <div className="px-5 gap-2 max-w-lg text-center md:text-left flex flex-col justify-center">
+      <span style={firaCode.style} className="font-semibold md:text-lg">
         👋 Hello there! I am
       </span>
-      <h1 className="my-3 text-4xl font-bold text-transparent bg-clip-text bg-[length:400%_400%] bg-gradient-hero animate-textGradient ">
+      <h1 className="my-3 md:my-4 text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-[length:400%_400%] bg-gradient-hero animate-textGradient ">
         Jonas dos Santos
       </h1>
       <p>
