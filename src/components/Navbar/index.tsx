@@ -206,7 +206,7 @@ const NavBar = () => {
   return (
     <ThemeProvider theme={theme}>
         <StyledContainer className={scrollDirection === 'down' ? "bg-[#f8f9ffdd]" : ""} scrollDirection={scrollDirection} bgColor={mainColor}>
-          <StyledNav className='px-5 py-5'>
+          <StyledNav className='p-5 sm:pr-10 sm:pl-10 '>
             <TransitionGroup component={null}>
               {isMounted && (
                 <CSSTransition classNames={fadeClass} timeout={timeout}>

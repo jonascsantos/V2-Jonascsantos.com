@@ -40,7 +40,7 @@ export function Footer() {
   return (
     <section data-section="Footer" className='relative'>
       <div className="absolute left-0 right-0 top-32">
-        <div className="flex gap-4 mx-5">
+        <div className="flex gap-4 px-5 sm:pr-10 sm:pl-10">
           <StyledLogo>
             <Logo color="#DFF4F6" key="logo-02"/>
           </StyledLogo>

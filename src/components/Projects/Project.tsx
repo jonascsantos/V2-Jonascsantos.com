@@ -50,7 +50,7 @@ export function Project(props: { project: ProjectProps }) {
       }
     >
       <h1
-        className={`my-3 text-4xl font-bold text-transparent bg-clip-text bg-[length:400%_400%]  animate-textGradient ${gradientClasses}`}
+        className={`my-3 text-4xl md:text-3xl font-bold text-transparent bg-clip-text bg-[length:400%_400%]  animate-textGradient ${gradientClasses}`}
       >
         {project.projectNumber}
         <br />

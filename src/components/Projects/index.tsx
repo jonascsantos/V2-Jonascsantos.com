@@ -10,7 +10,7 @@ export function Projects() {
   const projectsObj = [
     {
       projectNumber: "01.",
-      projectName: "That's The Ticket",
+      projectName: "That's The Ticket - Australia",
       websiteLink: "https://v2.thatstheticket.com.au/audience",
       description:
         "Live television audience coordination software utilized by thousands of people Australia-wide. I have orchestrated the UI refactoring of the application (MUI Custom theming)",
@@ -104,9 +104,9 @@ export function Projects() {
 
   return (
     <section data-section="Work">
-      <div className="flex flex-col gap-5 w-full pt-10 px-3 pb-12  bg-cloudy-white">
+      <div className="flex flex-col gap-5 w-full pt-10 px-5 sm:pr-10 sm:pl-10 pb-12 bg-cloudy-white">
         <Title />
-        <div className="flex flex-col gap-16" >
+        <div className="flex flex-col gap-16 md:gap-10 md:grid md:grid-cols-2" >
           {projectsObj.map((item, index) => (
             <Project key={item.projectName + "-" + index} project={item} />
           ))}
