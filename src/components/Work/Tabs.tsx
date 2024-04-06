@@ -139,7 +139,7 @@ export function Tabs() {
   }
 
   return (
-    <div className="w-98 px-5 bg-cloudy-white rounded-lg ">
+    <div className="w-98 px-5 pb-5 bg-cloudy-white rounded-lg ">
       <TabsMui
         value={value}
         onChange={handleChange}
