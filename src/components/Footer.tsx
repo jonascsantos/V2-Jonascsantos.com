@@ -36,20 +36,30 @@ export function Footer() {
       },
     },
   }));
+
+  const GlobalContainer = styled("div")(({ theme }) => ({
+    position: "relative",
+    width: "100%",
+    maxWidth: "1440px",
+    marginLeft: "auto",
+    marginRight: "auto",
+  }));
   
   return (
     <section data-section="Footer" className='relative'>
-      <div className="absolute left-0 right-0 top-32">
-        <div className="flex gap-4 px-5 sm:pr-10 sm:pl-10">
-          <StyledLogo>
-            <Logo color="#DFF4F6" key="logo-02"/>
-          </StyledLogo>
-          <div className="text-center flex flex-col	">
-            <span className="flex font-bold text-secondary">Jonas Dos Santos</span>
-            <span className="flex text-secondary">Frontend Development</span>
+      <GlobalContainer>
+        <div className="absolute left-0 right-0 top-32">
+          <div className="flex gap-4 px-5 sm:pr-10 sm:pl-10 lg:pl-24 lg:pr-24">
+            <StyledLogo>
+              <Logo color="#DFF4F6" key="logo-02"/>
+            </StyledLogo>
+            <div className="text-center flex flex-col	">
+              <span className="flex font-bold text-secondary">Jonas Dos Santos</span>
+              <span className="flex text-secondary">Frontend Development</span>
+            </div>
           </div>
         </div>
-      </div>
+      </GlobalContainer>
       <WaveContainer>
        <Wave
           fill="#049CB1"
