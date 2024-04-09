@@ -116,8 +116,12 @@ const HamburgerContainer = styled("div")(({ theme }) => ({
 }));
 
 
-const StyledResumeButton = styled("a")(({ theme }) => ({
-
+const GlobalContainer = styled("div")(({ theme }) => ({
+  position: "relative",
+  width: "100%",
+  maxWidth: "1440px",
+  marginLeft: "auto",
+  marginRight: "auto",
 }));
 
 export const StyledLogo = styled(Box)(({ theme }) => ({
@@ -206,39 +210,40 @@ const NavBar = () => {
   return (
     <ThemeProvider theme={theme}>
         <StyledContainer className={scrollDirection === 'down' ? "bg-[#f8f9ffdd]" : ""} scrollDirection={scrollDirection} bgColor={mainColor}>
-          <StyledNav className='p-5 sm:pr-10 sm:pl-10 '>
-            <TransitionGroup component={null}>
-              {isMounted && (
-                <CSSTransition classNames={fadeClass} timeout={timeout}>
-                  <StyledLogo >
-                    <Link href="/" aria-label="home">
-                      <Logo key="logo-01" color="#0EC9E3" />
-                    </Link>
-                  </StyledLogo>
-                </CSSTransition>
-              )}
-            </TransitionGroup>
-              <HamburgerContainer>
-                <StyledHamburger onClick={toggleMenu}>
-                    <StyledHamburgerBox>
-                        <StyledHamburgerInner menuOpen={menuOpen} bgColor={scrollDirection === 'down' ? "#0EC9E3" : "#0EC9E3"}/>
-                    </StyledHamburgerBox>
-                </StyledHamburger>
-              </HamburgerContainer>
+          <GlobalContainer>
+            <StyledNav className='p-5 sm:pr-10 sm:pl-10 lg:pl-24 lg:pr-24 '>
+              <TransitionGroup component={null}>
+                {isMounted && (
+                  <CSSTransition classNames={fadeClass} timeout={timeout}>
+                    <StyledLogo >
+                      <Link href="/" aria-label="home">
+                        <Logo key="logo-01" color="#0EC9E3" />
+                      </Link>
+                    </StyledLogo>
+                  </CSSTransition>
+                )}
+              </TransitionGroup>
+                <HamburgerContainer>
+                  <StyledHamburger onClick={toggleMenu}>
+                      <StyledHamburgerBox>
+                          <StyledHamburgerInner menuOpen={menuOpen} bgColor={scrollDirection === 'down' ? "#0EC9E3" : "#0EC9E3"}/>
+                      </StyledHamburgerBox>
+                  </StyledHamburger>
+                </HamburgerContainer>
 
-            {/* <TransitionGroup component={null}>
-              {isMounted && (
-                <CSSTransition classNames={fadeClass} timeout={timeout}>
-                  TEST
-                </CSSTransition>
-              )}
-            </TransitionGroup> */}
+              {/* <TransitionGroup component={null}>
+                {isMounted && (
+                  <CSSTransition classNames={fadeClass} timeout={timeout}>
+                    TEST
+                  </CSSTransition>
+                )}
+              </TransitionGroup> */}
 
-            {/* Other components */}
-          </StyledNav>
+              {/* Other components */}
+            </StyledNav>
+          </GlobalContainer>
         <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} />
       </StyledContainer>
-
     </ThemeProvider>
   );
 };
