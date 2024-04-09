@@ -8,6 +8,15 @@ import { Footer } from "@/components/Footer";
 import Loader from "@/components/Loader";
 import { useState } from "react";
 import NavBar from "@/components/Navbar";
+import { styled } from "@mui/material";
+
+const GlobalContainer = styled("div")(({ theme }) => ({
+  position: "relative",
+  width: "100%",
+  maxWidth: "1440px",
+  marginLeft: "auto",
+  marginRight: "auto",
+}));
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,10 +26,14 @@ export default function Home() {
       {isLoading && <Loader finishLoading={() => setIsLoading(false)} />}
       <NavBar />
       <main>
-        <Hero />
+        <GlobalContainer>
+          <Hero />
+        </GlobalContainer>
         <Work />
-        <Projects />
-        <Contact />
+        <GlobalContainer>
+          <Projects />
+          <Contact />
+        </GlobalContainer>
         <Footer />
       </main>
     </>
