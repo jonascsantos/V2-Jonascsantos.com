@@ -5,7 +5,7 @@ import TabsMui from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import SwipeableViews from "react-swipeable-views";
 
-import fcLogo from "@/assets/logos/FC.jpg";
+import fcLogo from "@/assets/logos/FC.svg";
 import sapLogo from "@/assets/logos/SAP.svg";
 import butopeaLogo from "@/assets/logos/BUTOPEA.png";
 import inssLogo from "@/assets/logos/INSS.svg";

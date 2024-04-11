@@ -103,7 +103,7 @@ export function Projects() {
   ] as ProjectProps[];
 
   return (
-    <section data-section="Work">
+    <section id="Projects">
       <div className="flex flex-col gap-5 md:gap-8 w-full pt-10 px-5 sm:pr-10 sm:pl-10 sm:pt-12 md:pt-24 lg:pl-24 lg:pr-24 pb-12 bg-cloudy-white">
         <Title />
         <div className="flex flex-col gap-16 md:gap-10 md:grid md:grid-cols-2" >

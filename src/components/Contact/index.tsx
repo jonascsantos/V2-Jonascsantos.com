@@ -3,7 +3,7 @@ import { Title } from "./Title";
 
 export function Contact() {
   return (
-    <section data-section="Contact">
+    <section id="Contact">
       <div className="flex flex-col gap-5 w-full pt-10 px-5 sm:pr-10 sm:pl-10 lg:pl-24 lg:pr-24 pb-12  bg-cloudy-white">
         <Title />
         <div>
