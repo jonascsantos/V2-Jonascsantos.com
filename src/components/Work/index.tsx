@@ -12,7 +12,7 @@ const GlobalContainer = styled("div")(({ theme }) => ({
 
 export function Work() {
   return (
-    <section data-section="Work">
+    <section id="Work">
       <div className="bg-gradient-work">
         <GlobalContainer>
           <div className="flex flex-col w-full pt-10 pb-24 px-5 sm:pl-10 sm:pr-10 sm:pb-24 sm:pt-12 md:pt-24 md:pb-32 lg:pl-24 lg:pr-24 lg:pl-24">

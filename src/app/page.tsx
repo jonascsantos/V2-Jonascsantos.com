@@ -9,6 +9,7 @@ import Loader from "@/components/Loader";
 import { useState } from "react";
 import NavBar from "@/components/Navbar";
 import { styled } from "@mui/material";
+import { ReactLenis } from '@studio-freight/react-lenis'
 
 const GlobalContainer = styled("div")(({ theme }) => ({
   position: "relative",
@@ -24,18 +25,20 @@ export default function Home() {
   return (
     <>
       {isLoading && <Loader finishLoading={() => setIsLoading(false)} />}
-      <NavBar />
-      <main>
-        <GlobalContainer>
-          <Hero />
-        </GlobalContainer>
-        <Work />
-        <GlobalContainer>
-          <Projects />
-          <Contact />
-        </GlobalContainer>
-        <Footer />
-      </main>
+      <ReactLenis root options={{ lerp: 0.1 }}>
+        <NavBar />
+        <main>
+          <GlobalContainer>
+            <Hero />
+          </GlobalContainer>
+          <Work />
+          <GlobalContainer>
+            <Projects />
+            <Contact />
+          </GlobalContainer>
+          <Footer />
+        </main>
+      </ReactLenis>
     </>
   );
 }

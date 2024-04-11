@@ -74,19 +74,19 @@ const ResumeLink = styled(Link)(({ theme }) => ({
 const navLinks = [
   {
     name: "About",
-    url: "/#about",
+    url: "/#About",
   },
   {
     name: "Experience",
-    url: "/#jobs",
+    url: "/#Work",
   },
   {
     name: "Projects",
-    url: "/#projects",
+    url: "/#Projects",
   },
   {
     name: "Contact",
-    url: "mailto:contact@jonascsantos.com",
+    url: "#Contact",
   },
 ];
 

@@ -9,6 +9,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
 import { Logo } from './Logo';
 import Menu from './Menu';
+import { useParams } from 'next/navigation';
 
 const theme = createTheme();
 
@@ -152,6 +153,8 @@ const NavBar = () => {
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const params = useParams();
+
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsMounted(true);
@@ -164,6 +167,22 @@ const NavBar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (window.location.hash) {
+      let anchor = window.location.hash;
+
+      if (anchor) {
+        anchor = anchor.slice(1);
+      }
+
+      const targetElement = document.getElementById(anchor);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [params]);
+
   const DELTA = 10;
   const navHeight = 100;
   const timeout = 2000;
@@ -172,19 +191,19 @@ const NavBar = () => {
   const navLinks = [
     {
         name: 'About',
-        url: '/#about',
+        url: '/#Hero',
     },
     {
       name: 'Experience',
-      url: '/#jobs',
+      url: '/#Work',
     },
     {
         name: 'Projects',
-        url: '/#projects',
+        url: '/#Projects',
     },
     {
         name: 'Contact',
-        url: 'mailto:contact@jonascsantos.com',
+        url: '/#Contact',
     },
   ];
 

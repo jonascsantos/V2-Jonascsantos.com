@@ -46,7 +46,7 @@ export function Footer() {
   }));
   
   return (
-    <section data-section="Footer" className='relative'>
+    <section id="Footer" className='relative'>
       <GlobalContainer>
         <div className="absolute left-0 right-0 top-32">
           <div className="flex gap-4 px-5 sm:pr-10 sm:pl-10 lg:pl-24 lg:pr-24">
