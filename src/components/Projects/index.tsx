@@ -14,16 +14,14 @@ export function Projects() {
   const [ref, inView] = useInView()
 
   const opacityVariant = {
-    visible: { opacity: 1, transition:{ delay: 0.5, duration: 0.5}},
+    visible: { opacity: 1, transition:{ delay: 0.1, duration: 0.5}},
     hidden: { opacity: 0 },
   }
 
   useEffect(() => {
     if (inView) {
       control.start("visible");
-    } else {
-      control.start("hidden");
-    }
+    } 
   }, [control, inView]);
 
   const projectsObj = [

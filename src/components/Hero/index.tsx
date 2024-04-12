@@ -13,21 +13,19 @@ export const Hero = ({ isLoading }: Props) => {
   const [ref, inView] = useInView()
 
   const opacityVariant = {
-    visible: { opacity: 1, transition:{ delay: 0.5, duration: 0.5 }},
+    visible: { opacity: 1, transition:{ delay: 0.3, duration: 0.5 }},
     hidden: { opacity: 0 },
   }
 
   const opacityVariant2 = {
-    visible: { opacity: 1, transition:{ delay: 0.75, duration: 0.5 }},
+    visible: { opacity: 1, transition:{ delay: 0.4, duration: 0.5 }},
     hidden: { opacity: 0 },
   }
 
   useEffect(() => {
     if (inView && !isLoading) {
       control.start("visible");
-    } else {
-      control.start("hidden");
-    }
+    } 
   }, [control, inView, isLoading]);
   
   return (
