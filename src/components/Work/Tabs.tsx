@@ -12,6 +12,13 @@ import inssLogo from "@/assets/logos/INSS.svg";
 import sesauLogo from "@/assets/logos/SESAU.png";
 
 export function Tabs() {
+  const tabRef = React.useRef<HTMLDivElement>(null)
+  const [tabHeight, setTabHeight] = React.useState(0);
+  React.useEffect(() => {
+    if(tabRef.current)
+      setTabHeight(tabRef.current.clientHeight)
+  }, [tabRef]);
+
   const workExperiences = [
     {
       companyName: "FreshConstruct",
@@ -127,6 +134,8 @@ export function Tabs() {
 
     return (
       <div
+        ref={tabRef}
+        style={{ minHeight: tabHeight }}
         role="tabpanel"
         hidden={value !== index}
         id={`full-width-tabpanel-${index}`}
@@ -161,7 +170,12 @@ export function Tabs() {
           />
         ))}
       </TabsMui>
-      <SwipeableViews axis="x" index={value} onChangeIndex={handleChangeIndex}>
+      <SwipeableViews 
+        containerStyle={{
+          transition: 'transform 0.35s cubic-bezier(0.15, 0.3, 0.25, 1) 0s'
+        }} 
+        enableMouseEvents axis="x" index={value} onChangeIndex={handleChangeIndex}
+      >
         {workExperiences.map((item, index) => (
           <TabPanel value={value} key={index} index={index} dir="ltr">
             <div>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Link from 'next/link';
 import { throttle } from "@/utils"
 import { styled } from "@mui/material";
@@ -10,6 +9,8 @@ import Box from '@mui/material/Box';
 import { Logo } from './Logo';
 import Menu from './Menu';
 import { useParams } from 'next/navigation';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const theme = createTheme();
 
@@ -147,13 +148,38 @@ export const StyledLogo = styled(Box)(({ theme }) => ({
   },
 }));
 
-const NavBar = () => {
+interface Props {
+  isLoading?: boolean
+}
+
+const NavBar = ({ isLoading }: Props) => {
   const [isMounted, setIsMounted] = useState(false);
   const [scrollDirection, setScrollDirection] = useState('none');
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const params = useParams();
+
+  const control = useAnimation()
+  const [ref, inView] = useInView()
+
+  const opacityVariant = {
+    visible: { opacity: 1, transition:{ duration: 0.5 }},
+    hidden: { opacity: 0 },
+  }
+
+  const opacityVariant2 = {
+    visible: { opacity: 1, transition:{ delay: 0.25, duration: 0.5 }},
+    hidden: { opacity: 0 },
+  }
+
+  useEffect(() => {
+    if (inView && !isLoading) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView, isLoading]);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -231,34 +257,34 @@ const NavBar = () => {
         <StyledContainer className={scrollDirection === 'down' ? "bg-[#f8f9ffdd]" : ""} scrollDirection={scrollDirection} bgColor={mainColor}>
           <GlobalContainer>
             <StyledNav className='p-5 sm:pr-10 sm:pl-10 lg:pl-24 lg:pr-24 '>
-              <TransitionGroup component={null}>
                 {isMounted && (
-                  <CSSTransition classNames={fadeClass} timeout={timeout}>
-                    <StyledLogo >
-                      <Link href="/" aria-label="home">
-                        <Logo key="logo-01" color="#0EC9E3" />
-                      </Link>
-                    </StyledLogo>
-                  </CSSTransition>
+                    <motion.div 
+                      ref={ref}
+                      variants={opacityVariant}
+                      initial="hidden"
+                      animate={control}
+                    >
+                      <StyledLogo >
+                        <Link href="/" aria-label="home">
+                          <Logo key="logo-01" color="#0EC9E3" />
+                        </Link>
+                      </StyledLogo>
+                    </motion.div>
                 )}
-              </TransitionGroup>
-                <HamburgerContainer>
-                  <StyledHamburger onClick={toggleMenu}>
-                      <StyledHamburgerBox>
-                          <StyledHamburgerInner menuOpen={menuOpen} bgColor={scrollDirection === 'down' ? "#0EC9E3" : "#0EC9E3"}/>
-                      </StyledHamburgerBox>
-                  </StyledHamburger>
-                </HamburgerContainer>
-
-              {/* <TransitionGroup component={null}>
-                {isMounted && (
-                  <CSSTransition classNames={fadeClass} timeout={timeout}>
-                    TEST
-                  </CSSTransition>
-                )}
-              </TransitionGroup> */}
-
-              {/* Other components */}
+                <motion.div 
+                  ref={ref}
+                  variants={opacityVariant2}
+                  initial="hidden"
+                  animate={control}
+                >
+                  <HamburgerContainer>
+                    <StyledHamburger onClick={toggleMenu}>
+                        <StyledHamburgerBox>
+                            <StyledHamburgerInner menuOpen={menuOpen} bgColor={scrollDirection === 'down' ? "#0EC9E3" : "#0EC9E3"}/>
+                        </StyledHamburgerBox>
+                    </StyledHamburger>
+                  </HamburgerContainer>
+                </motion.div>
             </StyledNav>
           </GlobalContainer>
         <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} />
