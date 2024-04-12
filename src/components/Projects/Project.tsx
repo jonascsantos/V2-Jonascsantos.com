@@ -64,7 +64,7 @@ export function Project(props: { project: ProjectProps }) {
           backgroundColor: project.bgColor,
         }}
         className={
-          "w-98 relative rounded-3xl shadow-inner transition-all drop-shadow-md hover:drop-shadow-lg px-5 pt-5 pb-12 flex flex-col gap-3 overflow-hidden"
+          "w-98 h-full relative rounded-lg shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] transition-all hover:drop-shadow-lg duration-500 hover:scale-105 hover:shadow-xl px-5 pt-5 pb-12 flex flex-col gap-3 overflow-hidden"
         }
       >
         <h1
@@ -105,7 +105,7 @@ export function Project(props: { project: ProjectProps }) {
             </div>
           ))}
         </div>
-        <div className={`flex w-full mt-5 justify-between`}>
+        <div className={`flex flex-1 w-full mt-5 justify-between items-end`}>
           <div className={`flex w-100 font-medium text-sm `}>
             {project.websiteLink && (
               <a rel="noopener" target="_blank" href={project.websiteLink}>

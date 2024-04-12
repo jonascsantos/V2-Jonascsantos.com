@@ -77,7 +77,7 @@ export function Footer() {
               </StyledLogo>
               <div className="text-center flex flex-col	">
                 <span className="flex font-bold text-secondary">Jonas Dos Santos</span>
-                <span className="flex text-secondary">Frontend Development</span>
+                <span className="flex text-secondary">FullStack Development</span>
               </div>
             </div>
           </div>
