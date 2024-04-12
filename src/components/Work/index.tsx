@@ -22,27 +22,25 @@ export const Work = ({ isLoading }: Props) => {
   const [ref, inView] = useInView()
 
   const opacityVariant = {
-    visible: { opacity: 1, transition:{ delay: 1, duration: 0.5 }},
+    visible: { opacity: 1, transition:{ delay: 0.2, duration: 0.5 }},
     hidden: { opacity: 0 },
   }
 
   useEffect(() => {
     if (inView && !isLoading) {
       control.start("visible");
-    } else {
-      control.start("hidden");
-    }
+    } 
   }, [control, inView, isLoading]);
   
   return (
-    <motion.div 
-      ref={ref}
-      variants={opacityVariant}
-      initial="hidden"
-      animate={control}
-    >
-      <section id="Work">
-        <div className="bg-gradient-work">
+    <section id="Work">
+      <div className="bg-gradient-work">
+        <motion.div 
+          ref={ref}
+          variants={opacityVariant}
+          initial="hidden"
+          animate={control}
+        >
           <GlobalContainer>
             <div className="flex flex-col w-full pt-10 pb-24 px-5 sm:pl-10 sm:pr-10 sm:pb-24 sm:pt-12 md:pt-24 md:pb-32 lg:pl-24 lg:pr-24 lg:pl-24">
                 <div className="pb-5 md:pb-8">
@@ -51,8 +49,8 @@ export const Work = ({ isLoading }: Props) => {
                 <Tabs />
             </div>
           </GlobalContainer>
-        </div>
-      </section>
-    </motion.div>
+        </motion.div>
+      </div>
+    </section>
   );
 }

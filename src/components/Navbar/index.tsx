@@ -169,15 +169,13 @@ const NavBar = ({ isLoading }: Props) => {
   }
 
   const opacityVariant2 = {
-    visible: { opacity: 1, transition:{ delay: 0.25, duration: 0.5 }},
+    visible: { opacity: 1, transition:{ delay: 0.1, duration: 0.5 }},
     hidden: { opacity: 0 },
   }
 
   useEffect(() => {
     if (inView && !isLoading) {
       control.start("visible");
-    } else {
-      control.start("hidden");
     }
   }, [control, inView, isLoading]);
 

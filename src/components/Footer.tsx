@@ -2,8 +2,24 @@ import Wave from 'react-wavify';
 import { Box, styled } from "@mui/material";
 import Link from 'next/link';
 import { Logo } from './Navbar/Logo';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 
 export function Footer() {
+  const control = useAnimation()
+  const [ref, inView] = useInView()
+
+  const opacityVariant = {
+    visible: { opacity: 1, transition:{ delay: 0.1, duration: 0.5}},
+    hidden: { opacity: 0 },
+  }
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } 
+  }, [control, inView]);
 
   const WaveContainer = styled("div")(({ theme }) => ({
     position: 'absolute',
@@ -47,19 +63,26 @@ export function Footer() {
   
   return (
     <section id="Footer" className='relative'>
-      <GlobalContainer>
-        <div className="absolute left-0 right-0 top-32">
-          <div className="flex gap-4 px-5 sm:pr-10 sm:pl-10 lg:pl-24 lg:pr-24">
-            <StyledLogo>
-              <Logo color="#DFF4F6" key="logo-02"/>
-            </StyledLogo>
-            <div className="text-center flex flex-col	">
-              <span className="flex font-bold text-secondary">Jonas Dos Santos</span>
-              <span className="flex text-secondary">Frontend Development</span>
+      <motion.div 
+        ref={ref}
+        variants={opacityVariant}
+        initial="hidden"
+        animate={control}
+      >
+        <GlobalContainer>
+          <div className="absolute left-0 right-0 top-32">
+            <div className="flex gap-4 px-5 sm:pr-10 sm:pl-10 lg:pl-24 lg:pr-24">
+              <StyledLogo>
+                <Logo color="#DFF4F6" key="logo-02"/>
+              </StyledLogo>
+              <div className="text-center flex flex-col	">
+                <span className="flex font-bold text-secondary">Jonas Dos Santos</span>
+                <span className="flex text-secondary">Frontend Development</span>
+              </div>
             </div>
           </div>
-        </div>
-      </GlobalContainer>
+        </GlobalContainer>
+      </motion.div>
       <WaveContainer>
        <Wave
           fill="#049CB1"

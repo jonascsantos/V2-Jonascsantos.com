@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import Link from "next/link";
 import { styled } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -58,23 +58,26 @@ const NavList = styled("ol")(({ theme }) => ({
 }));
 
 const NavListItem = styled("li")(({ theme }) => ({
-  margin: "0 auto 26px",
+  margin: "0 auto 10px",
   position: "relative",
   fontSize: 16,
 }));
 
-const NavLink = styled(Link)(({ theme }) => ({
-  padding: "3px 20px 20px",
+const NavButton = styled("div")(({ theme }) => ({
+  padding: "20px 20px",
   width: "100%",
+  cursor: "pointer",
+  userSelect: "none"
 }));
 
 const ResumeLink = styled(Link)(({ theme }) => ({
+  padding: "20px 20px",
 }));
 
 const navLinks = [
   {
     name: "About",
-    url: "/#About",
+    url: "/#Hero",
   },
   {
     name: "Experience",
@@ -86,7 +89,7 @@ const navLinks = [
   },
   {
     name: "Contact",
-    url: "#Contact",
+    url: "/#Contact",
   },
 ];
 
@@ -108,6 +111,15 @@ export const Menu = ({
       toggleMenu();
     }
   };
+  const handleLinkClick = (url: string) => {
+    let newUrl = url.slice(2);
+
+    const targetElement = document.getElementById(newUrl);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
   return (
       <StyledContainer
@@ -127,7 +139,7 @@ export const Menu = ({
                     </a>
                   ) : (
                     <NavListItem key={i}>
-                      <NavLink href={url}>{name}</NavLink>
+                      <NavButton onClick={() => handleLinkClick(url)}>{name}</NavButton>
                     </NavListItem>
                   )
                 )}
