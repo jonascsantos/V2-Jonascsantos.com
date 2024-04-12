@@ -25,20 +25,20 @@ export default function Home() {
   return (
     <>
       {isLoading && <Loader finishLoading={() => setIsLoading(false)} />}
-      <ReactLenis root options={{ lerp: 0.1 }}>
-        <NavBar />
-        <main>
-          <GlobalContainer>
-            <Hero />
-          </GlobalContainer>
-          <Work />
-          <GlobalContainer>
-            <Projects />
-            <Contact />
-          </GlobalContainer>
-          <Footer />
-        </main>
-      </ReactLenis>
+          <ReactLenis root options={{ lerp: 0.1 }}>
+            <NavBar isLoading={isLoading}/>
+            <main>
+              <GlobalContainer>
+                <Hero isLoading={isLoading}/>
+              </GlobalContainer>
+              <Work isLoading={isLoading} />
+              <GlobalContainer>
+                <Projects  />
+                <Contact />
+              </GlobalContainer>
+              <Footer />
+            </main>
+          </ReactLenis>
     </>
   );
 }

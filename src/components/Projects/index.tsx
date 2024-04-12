@@ -5,8 +5,27 @@ import project1 from "@/assets/projects/project1.png";
 import project2 from "@/assets/projects/project2.png";
 import project3 from "@/assets/projects/project3.png";
 import project4 from "@/assets/projects/project4.png";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export function Projects() {
+  const control = useAnimation()
+  const [ref, inView] = useInView()
+
+  const opacityVariant = {
+    visible: { opacity: 1, transition:{ delay: 0.5, duration: 0.5}},
+    hidden: { opacity: 0 },
+  }
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
+
   const projectsObj = [
     {
       projectNumber: "01.",
@@ -103,15 +122,22 @@ export function Projects() {
   ] as ProjectProps[];
 
   return (
-    <section id="Projects">
-      <div className="flex flex-col gap-5 md:gap-8 w-full pt-10 px-5 sm:pr-10 sm:pl-10 sm:pt-12 md:pt-24 lg:pl-24 lg:pr-24 pb-12 bg-cloudy-white">
-        <Title />
-        <div className="flex flex-col gap-16 md:gap-10 md:grid md:grid-cols-2" >
-          {projectsObj.map((item, index) => (
-            <Project key={item.projectName + "-" + index} project={item} />
-          ))}
+    <motion.div 
+      ref={ref}
+      variants={opacityVariant}
+      initial="hidden"
+      animate={control}
+    >
+      <section id="Projects">
+        <div className="flex flex-col gap-5 md:gap-8 w-full pt-10 px-5 sm:pr-10 sm:pl-10 sm:pt-12 md:pt-24 lg:pl-24 lg:pr-24 pb-12 bg-cloudy-white">
+          <Title />
+          <div className="flex flex-col gap-16 md:gap-10 md:grid md:grid-cols-2" >
+            {projectsObj.map((item, index) => (
+              <Project key={item.projectName + "-" + index} project={item} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </motion.div>
   );
 }
