@@ -47,6 +47,7 @@ const StyledHamburger = styled("a")(({ theme }) => ({
   alignItems: 'center',
   overflow: 'visible',
   margin: '0',
+  padding: '8px 8px 8px 15px',
   zIndex: 12,
   cursor: 'pointer',
   transitionTimingFunction: 'linear',
