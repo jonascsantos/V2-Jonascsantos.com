@@ -28,6 +28,10 @@ module.exports = {
       project4Primary: "#070707",
       project4Secondary: "#190084",
       project4Tertiary: "#2400c0",
+      project5Bg: "#27245c",
+      project5Primary: "#27245c",
+      project5Secondary: "#232052",
+      project5Tertiary: "#67658c",
     },
     extend: {
       backgroundImage: (theme) => ({
@@ -70,6 +74,14 @@ module.exports = {
         )}, ${theme("colors.project4Secondary")}, ${theme(
           "colors.project4Primary"
         )}, ${theme("colors.project4Secondary")})`,
+
+        "gradient-project-5": `linear-gradient(to right, ${theme(
+          "colors.project5Primary"
+        )}, ${theme("colors.project5Secondary")}, ${theme(
+          "colors.project5Tertiary"
+        )}, ${theme("colors.project5Secondary")}, ${theme(
+          "colors.project5Primary"
+        )}, ${theme("colors.project5Secondary")})`,
 
         "gradient-work": `radial-gradient(at 96% 98%, hsla(193, 70%, 56%, 1) 0px, transparent 50%),
         radial-gradient(at 95% 74%, hsla(33, 78%, 74%, 0.81) 0px, transparent 50%),

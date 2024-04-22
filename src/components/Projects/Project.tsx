@@ -30,6 +30,7 @@ const gradients: Gradients = {
   2: "bg-gradient-project-2",
   3: "bg-gradient-project-3",
   4: "bg-gradient-project-4",
+  5: "bg-gradient-project-5",
 };
 
 export function Project(props: { project: ProjectProps }) {
@@ -38,7 +39,7 @@ export function Project(props: { project: ProjectProps }) {
   const [ref, inView] = useInView()
 
   const opacityVariant = {
-    visible: { opacity: 1, transition:{ delay: 0.1, duration: 0.5}},
+    visible: { opacity: 1, transition:{ delay: 0.2, duration: 0.5}},
     hidden: { opacity: 0 },
   }
 
@@ -58,6 +59,7 @@ export function Project(props: { project: ProjectProps }) {
       variants={opacityVariant}
       initial="hidden"
       animate={control}
+      className="h-full"
     >
       <div
         style={{
@@ -76,7 +78,7 @@ export function Project(props: { project: ProjectProps }) {
         </h1>
         <div
           className={"relative w-full overflow-hidden rounded-3xl shadow-lg"}
-          style={{ aspectRatio: 1.236 }}
+          style={{ aspectRatio: 1.236, background: "white" }}
         >
           <Image
             style={{ objectFit: "contain" }}
