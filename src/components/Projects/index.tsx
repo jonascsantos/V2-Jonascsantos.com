@@ -5,6 +5,7 @@ import project1 from "@/assets/projects/project1.png";
 import project2 from "@/assets/projects/project2.png";
 import project3 from "@/assets/projects/project3.png";
 import project4 from "@/assets/projects/project4.png";
+import project5 from "@/assets/projects/project5.png";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -14,7 +15,7 @@ export function Projects() {
   const [ref, inView] = useInView()
 
   const opacityVariant = {
-    visible: { opacity: 1, transition:{ delay: 0.1, duration: 0.5}},
+    visible: { opacity: 1, transition:{ delay: 0.2, duration: 0.5}},
     hidden: { opacity: 0 },
   }
 
@@ -52,6 +53,29 @@ export function Projects() {
     },
     {
       projectNumber: "02.",
+      projectName: "McArthurGlen Designer Outlets",
+      websiteLink: "https://play.google.com/store/apps/details?id=com.mcarthurglen.a1&hl=en_US&pli=1",
+      description:
+        "McArthurGlen is Europe's leader in designer outlet shopping, with 25 locations in 8 countries. I've worked on implementing new features, fixing bugs, and releasing updates for their Expo React-Native app on both the Google Play Store and the App Store.",
+      technologies: [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "ASP.NET Core",
+        "Apple TestFlight",
+        "Google Play Console",
+        "Salesforce",
+        "MSSQL",
+      ],
+      image: project5.src,
+      bgColor: "#e6e5ff",
+      primaryProjectColor: "#3e3a93",
+      secondaryProjectColor: "#232052",
+      tertiaryProjectColor: "#27245c",
+      gradient: 5,
+    },
+    {
+      projectNumber: "03.",
       projectName: "Simple Weather Forecast",
       githubLink: "https://github.com/jonascsantos/WeatherForecastApp",
       websiteLink: "https://weather.jonascsantos.com",
@@ -76,7 +100,7 @@ export function Projects() {
       gradient: 1,
     },
     {
-      projectNumber: "03.",
+      projectNumber: "04.",
       projectName: "Indoor Positioning System",
       githubLink: "https://github.com/jonascsantos/IndoorPositioningAPP",
       websiteLink: "https://indoor.jonascsantos.com",
@@ -100,7 +124,7 @@ export function Projects() {
       gradient: 2,
     },
     {
-      projectNumber: "04.",
+      projectNumber: "05.",
       projectName: "Universal ClipSync (UI/UX)",
       githubLink: "https://github.com/jonascsantos/UniversalClipSyncAPP",
       websiteLink: "",
@@ -129,7 +153,7 @@ export function Projects() {
       <section id="Projects">
         <div className="flex flex-col gap-5 md:gap-8 w-full pt-10 px-5 sm:pr-10 sm:pl-10 sm:pt-12 md:pt-24 lg:pl-24 lg:pr-24 pb-12 bg-cloudy-white">
           <Title />
-          <div className="flex flex-col gap-16 md:gap-10 md:grid md:grid-cols-2" >
+          <div className="flex flex-col gap-16 md:gap-10 md:grid md:grid-cols-2 justify-center" >
             {projectsObj.map((item, index) => (
               <Project key={item.projectName + "-" + index} project={item} />
             ))}

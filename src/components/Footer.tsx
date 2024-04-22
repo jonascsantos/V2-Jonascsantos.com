@@ -11,7 +11,7 @@ export function Footer() {
   const [ref, inView] = useInView()
 
   const opacityVariant = {
-    visible: { opacity: 1, transition:{ delay: 0.1, duration: 0.5}},
+    visible: { opacity: 1, transition:{ delay: 0.3, duration: 0.5}},
     hidden: { opacity: 0 },
   }
 
