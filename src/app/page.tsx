@@ -10,6 +10,7 @@ import { useState } from "react";
 import NavBar from "@/components/Navbar";
 import { styled } from "@mui/material";
 import { ReactLenis } from '@studio-freight/react-lenis'
+import ReactGA from "react-ga4";
 
 const GlobalContainer = styled("div")(({ theme }) => ({
   position: "relative",
@@ -21,6 +22,8 @@ const GlobalContainer = styled("div")(({ theme }) => ({
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+
+  ReactGA.initialize("G-ZZ8Z7LM915");
 
   return (
     <>
