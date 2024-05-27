@@ -35,7 +35,6 @@ export function Tabs() {
         "Managed REST API .NET endpoints and MSSQL databases.",
         "Ensured robust quality through Cypress testing for comprehensive QA.",
         "Designed user-friendly interfaces and prototypes using Figma.",
-        "Conducted A/B testing and analytics with VWO, Google Analytics, and Google Tag Manager.",
         "Efficiently managed content with Umbraco and Episerver CMS.",
         "Successfully delivered HTML Email templates and PDFs (.NET).",
       ],
