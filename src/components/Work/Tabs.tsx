@@ -5,6 +5,7 @@ import TabsMui from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import SwipeableViews from "react-swipeable-views";
 
+import brimLogo from "@/assets/logos/brim.svg";
 import fcLogo from "@/assets/logos/FC.svg";
 import sapLogo from "@/assets/logos/SAP.svg";
 import butopeaLogo from "@/assets/logos/BUTOPEA.png";
@@ -21,10 +22,38 @@ export function Tabs() {
 
   const workExperiences = [
     {
-      companyName: "FreshConstruct",
-      jobTitle: "Full-Stack Developer",
-      startDate: "Mar 2023",
+      companyName: "Brim | Custom AI Solutions",
+      jobTitle: "Founding Senior Full Stack Engineer",
+      startDate: "Jul 2024",
       endDate: "Present",
+      icon: brimLogo.src,
+      bulletPoints: [
+        "Played a key role in designing and implementing Brim’s AI platform using React/Next.js with Tailwind for the frontend, Python with LangGraph for Generative AI, and TypeScript-based serverless GraphQL API for the backend, all deployed within a secure VPC network.",
+        "Engineered robust CI/CD pipelines using GitHub Actions and orchestrated ECS deployments on AWS, managing custom domains, SSL certificates, and ensuring seamless, scalable application delivery.",
+        "Configured databases for robust performance, including designing GraphQL schemas for the API, and integrating PostgreSQL and Redis to handle AI memory, threads, and complex data workflows.",
+        "Served as Scrum Master by creating and delegating tasks on JIRA to ensure smooth project progress sprints and team collaboration.",
+        "Mentored junior engineer on modern development practices, cloud infrastructure, and DevOps.",
+      ],
+      technologies: [
+        "React",
+        "Next.JS",
+        "Python",
+        "Generative AI",
+        "LangGraph",
+        "TypeScript",
+        "Tailwind",
+        "Node.JS",
+        "GraphQL",
+        "Zustand",
+        "AWS",
+        "Github Actions",
+      ],
+    },
+    {
+      companyName: "FreshConstruct",
+      jobTitle: "Full-Stack Engineer",
+      startDate: "Mar 2023",
+      endDate: "Jul 2024",
       icon: fcLogo.src,
       bulletPoints: [
         "Orchestrated UI refactoring of audience coordination software, utilized by thousands accross Australia. This software efficiently handles bookings for television shows. Visit: https://v2.thatstheticket.com.au/audience",

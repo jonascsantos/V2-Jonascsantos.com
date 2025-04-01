@@ -31,6 +31,7 @@ const gradients: Gradients = {
   3: "bg-gradient-project-3",
   4: "bg-gradient-project-4",
   5: "bg-gradient-project-5",
+  6: "bg-gradient-project-6",
 };
 
 export function Project(props: { project: ProjectProps }) {

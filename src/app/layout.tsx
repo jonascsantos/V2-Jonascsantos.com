@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: {
-    default: "Jonas dos Santos | FullStack Developer",
+    default: "Jonas dos Santos | Senior FullStack Engineer",
     template: "%s | Jonas dos Santos",
   },
   robots: {
@@ -14,7 +14,7 @@ export const metadata = {
     follow: true,
   },
   description:
-    "A resourceful FullStack Developer passionate about creating innovative and efficient web applications using cutting-edge technologies.",
+    "A resourceful FullStack Engineer passionate about creating innovative and efficient web applications using cutting-edge technologies.",
 };
 
 export default function RootLayout({

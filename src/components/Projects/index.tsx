@@ -1,6 +1,7 @@
 import { Title } from "./Title";
 import { Project, ProjectProps } from "./Project";
 
+import brim from "@/assets/projects/brim.png";
 import project1 from "@/assets/projects/project1.png";
 import project2 from "@/assets/projects/project2.png";
 import project3 from "@/assets/projects/project3.png";
@@ -28,6 +29,33 @@ export function Projects() {
   const projectsObj = [
     {
       projectNumber: "01.",
+      projectName: "Brim | Custom AI Solutions",
+      websiteLink: "https://joinbrim.ai",
+      description:
+        "Custom AI agents designed to automate routine, time-consuming tasks, allowing teams to focus on high-impact work.",
+      technologies: [
+        "React",
+        "Next.JS",
+        "Python",
+        "Generative AI",
+        "LangGraph",
+        "TypeScript",
+        "Tailwind",
+        "Node.JS",
+        "GraphQL",
+        "Zustand",
+        "AWS",
+        "Github Actions",
+      ],
+      image: brim.src,
+      bgColor: "#d8e9e7",
+      primaryProjectColor: "#1B5855",
+      secondaryProjectColor: "#1B5855",
+      tertiaryProjectColor: "#1B5855",
+      gradient: 6,
+    },
+    {
+      projectNumber: "02.",
       projectName: "That's The Ticket - Australia",
       websiteLink: "https://v2.thatstheticket.com.au/audience",
       description:
@@ -40,6 +68,8 @@ export function Projects() {
         "TypeScript",
         "Storybook",
         "ASP.NET Core",
+        "Cypress",
+        "Azure",
         "HTML",
         "CSS",
         "MSSQL",
@@ -52,7 +82,7 @@ export function Projects() {
       gradient: 4,
     },
     {
-      projectNumber: "02.",
+      projectNumber: "03.",
       projectName: "McArthurGlen Designer Outlets",
       websiteLink: "https://play.google.com/store/apps/details?id=com.mcarthurglen.a1&hl=en_US&pli=1",
       description:
@@ -75,7 +105,7 @@ export function Projects() {
       gradient: 5,
     },
     {
-      projectNumber: "03.",
+      projectNumber: "04.",
       projectName: "Simple Weather Forecast",
       githubLink: "https://github.com/jonascsantos/WeatherForecastApp",
       websiteLink: "https://weather.jonascsantos.com",
@@ -100,7 +130,7 @@ export function Projects() {
       gradient: 1,
     },
     {
-      projectNumber: "04.",
+      projectNumber: "05.",
       projectName: "Indoor Positioning System",
       githubLink: "https://github.com/jonascsantos/IndoorPositioningAPP",
       websiteLink: "https://indoor.jonascsantos.com",
@@ -124,7 +154,7 @@ export function Projects() {
       gradient: 2,
     },
     {
-      projectNumber: "05.",
+      projectNumber: "06.",
       projectName: "Universal ClipSync (UI/UX)",
       githubLink: "https://github.com/jonascsantos/UniversalClipSyncAPP",
       websiteLink: "",

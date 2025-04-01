@@ -15,7 +15,7 @@ export function AboutMe() {
       </h1>
       <p>
         A resourceful{" "}
-        <span className="font-bold text-primary">Full Stack Developer</span>{" "}
+        <span className="font-bold text-primary">Full Stack Engineer</span>{" "}
         passionate about creating innovative and efficient web applications
         using cutting-edge tools and technologies.
       </p>
